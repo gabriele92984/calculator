@@ -51,3 +51,18 @@ console.log(operate("+", 3, 3)); // Outputs 6
 console.log(operate("/", 10, 0)); // Outputs "Error: Division by zero is not allowed."
 console.log(operate("$", 10, 0)); // Outputs "Invalid operator!"
 
+
+const display = document.getElementById("display");
+
+// Get all number buttons
+const numberButtons = document.querySelectorAll(".button[data-value]");
+
+// Add click event listener to each number button
+numberButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        // Get the clicked number
+        const number = button.getAttribute("data-value");
+        // Update the display
+        display.textContent = number;
+    });
+});
