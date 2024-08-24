@@ -12,22 +12,25 @@
       <input type="text" id="display">
     </div>
     <div class="buttons">
-      <button onclick="getNumber()">1</button>
-      <button onclick="getNumber()">2</button>
-      <button onclick="getNumber()">3</button>
-      <button onclick="getNumber()">+</button>
-      <button onclick="getNumber()">4</button>
-      <button onclick="getNumber()">5</button>
-      <button onclick="getNumber()">6</button>
-      <button onclick="getNumber()">-</button>
-      <button onclick="getNumber()">7</button>
-      <button onclick="getNumber()">8</button>
-      <button onclick="getNumber()">9</button>
-      <button onclick="getNumber()">*</button>
-      <button onclick="getNumber()">CE</button>
-      <button onclick="getNumber()">0</button>
-      <button onclick="getNumber()">=</button>
-      <button onclick="getNumber()">/</button>
+      <button onclick="getOperand(1)">1</button>
+      <button onclick="getOperand(2)">2</button>
+      <button onclick="getOperand(3)">3</button>
+      <button onclick="getOperator('+')">+</button>
+
+      <button onclick="getOperand(4)">4</button>
+      <button onclick="getOperand(5)">5</button>
+      <button onclick="getOperand(6)">6</button>
+      <button onclick="getOperator('-')">-</button>
+
+      <button onclick="getOperand(7)">7</button>
+      <button onclick="getOperand(8)">8</button>
+      <button onclick="getOperand(9)">9</button>
+      <button onclick="getOperator('*')">*</button>
+
+      <button onclick="clearDisplay()">CE</button>
+      <button onclick="getOperand('0')">0</button>
+      <button onclick="calcOperation()">=</button>
+      <button onclick="getOperator('÷')">÷</button>
     </div>
   </div>
   <script src="./script.js"></script>

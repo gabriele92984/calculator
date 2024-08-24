@@ -1,68 +1,55 @@
-function add(a, b) {
-  return a + b;
-}
+let firstOperand;
+let secondOperand;
 
-function subtract(a, b) {
-  return a - b;
-}
+let step = 0;
+let operator;
+let result = 0;
+ 
+let firstOperandArr = [];
+let secondOperandArr = [];
 
-function multiply(a, b) {
-  return a * b;
-}
+let display = document.getElementById('display')
 
-function divide(a, b) {
-  if (b === 0) {
-    return "Error: Division by zero is not allowed.";
-  } else {
-    return a / b;
+function getOperand(number) {
+  if (step === 0 || step === 1) {
+    step = 1;
+    firstOperandArr.push(number); // Create an array to work with multiple digit numbers [1, 8, 4...]
+    firstOperand = Number(firstOperandArr.join('')); // Merge the array into one string then into a Number
+    display.value = firstOperand;
+  } else if (step === 2) {
+    secondOperandArr.push(number)
+    secondOperand = Number(secondOperandArr.join(''));
   }
 }
 
-console.log(add(5, 7)); // Returns 12
-console.log(subtract(10, 3)); // Returns 7
-console.log(multiply(4, 6)); // Returns 24
-console.log(divide(20, 5)); // Returns 4
-console.log(divide(10, 0)); // Returns "Error: Division by zero is not allowed."
-
-
-let operand1
-,   operand2
-,   operator;
-
-
-function operate(operator, a, b) {
-  if (operator === "+") {
-    return add(a, b);
-  } else if (operator === "-") {
-    return subtract(a, b);
-  } else if (operator === "*") {
-    return multiply(a, b);
-  } else if (operator === "/") {
-    return divide(a, b);
-  } else {
-    return "Invalid operator!";
-  }
+function getOperator(operation) {
+  step = 2;
+  operator = operation;
 }
 
-console.log(operate("*", 5, 7)); // Outputs 35
-console.log(operate("/", 10, 2)); // Outputs 5
-console.log(operate("-", 15, 5)); // Outputs 10
-console.log(operate("+", 3, 3)); // Outputs 6
-console.log(operate("/", 10, 0)); // Outputs "Error: Division by zero is not allowed."
-console.log(operate("$", 10, 0)); // Outputs "Invalid operator!"
+function clearDisplay () {
+  display.value = 0;
+  firstOperand = null;
+  secondOperand = null;
+  step = 0;
+  operation = null;
+  result = 0;
+  firstOperandArr = [];
+  secondOperandArr = [];
+}
 
-
-const display = document.getElementById("display");
-
-// Get all number buttons
-const numberButtons = document.querySelectorAll(".button[data-value]");
-
-// Add click event listener to each number button
-numberButtons.forEach(button => {
-    button.addEventListener("click", () => {
-        // Get the clicked number
-        const number = button.getAttribute("data-value");
-        // Update the display
-        display.textContent = number;
-    });
-});
+const calcOperation = () => {
+  if (operator === '+') {
+    result = firstOperand + secondOperand;
+    display.value = result;
+  } else if (operator === '-') {
+    result = firstOperand - secondOperand;
+    display.value = result;
+  } else if (operator === '*') {
+    result = firstOperand * secondOperand;
+    display.value = result;
+  } else if (operator === '÷') {
+    result = firstOperand / secondOperand;
+    display.value = result;
+  }
+ }
