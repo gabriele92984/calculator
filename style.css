@@ -1,12 +1,42 @@
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
-* {
-  margin: 0;
-}
-
 body {
   background-color: lightslategray;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  margin: 10vh auto;
+  width: 500px;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 10px;
+  background-color: darkgrey;
+}
+
+.header {
+  margin: 2rem;
+  color: darkslategrey;
+}
+
+input {
+  width: 370px;
+  padding: 0.5rem 2rem;
+  font-size: 3rem;
+  border-radius: 10px;
+  text-align: right;
+  background-color: lightgrey;
+  color: darkgray;
+}
+
+button {
+  padding: 40px;
+  font-size: 20px;
+  margin: 0.5rem;
+  max-width: 100px;
+  max-height: 100px;
+  text-align: center;
+  border-radius: 10%;
+
+  font-weight: 900;
+  background-color: lightgray;
+  color: darkgray;
 }
